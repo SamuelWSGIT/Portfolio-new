@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+/* ========== RESET ========== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: var(--font-2);
+}
+
+span{
+    color: var(--text-color-title);
+}
+
+/* ========== VARIAVEIS ========== */
+
+:root {
+    --background-color: #FFFFFF;
+    --background-color-2: #eefffb;
+    --text-color: #000;
+    --text-color-2: #777;
+    --text-color-title: #1DA88C;
+    --text-color-title-2: #CFCA2D;
+    --text-color-title-3: #804BCC;
+    --font-1: Montserrat;
+    --font-2: Poppins;
+    --border: 2px solid #777;
+    --border-radius: 15px;
+}
+
+/* ========== HEADER ========== */
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 1280px;
+    margin: 1rem 2rem;
+}
+
+.header_items{
+    display: flex;
+    justify-content: space-between;
+}
+
+.wrapper{
+    max-width: 84%;
+    display: flex;
+    font-family: var(--font-1);
+}
+
+.header_text{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.avatar{
+    z-index: -1;
+}
+
+/* ========== MENU ========== */
+
+.nav-menu{
+    background: var(--background-color-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.floating_menu {
+    width: 900px;
+    height: 90px;
+    margin-top: -40px;
+    display: flex;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background-color: white;
+    box-shadow: 0px 5px 20px rgb(0 0 0 / 18%);
+    align-items: center;
+}
+
+.floating_items{
+    text-align: center;
+    width: 50%;
+    list-style: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.floating_items:nth-child(-n+3){
+    border-right: 2px solid #000;
+}
+
+.floating_items a{
+    color: var(--text-color);
+}
+
+.floating_items a:hover{
+    color: var(--text-color-title);
+    transition: .4s;
+}
+
+/* ========== Sobre ========== */
+
+.sobre-mim {
+    background: var(--background-color-2);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.sobre-mim h1{
+    width: 1280px;
+    padding: 3rem;
+    border-bottom: 1px solid #1DA88C;
+    color: var(--text-color-title);
+}
+
+.img_perfil{
+    margin-top: 50px;
+    display: flex;
+    background-image: url(../img/fundo-perfil.png);
+    background-repeat: no-repeat;
+}
+
+.img_perfil img{
+    margin: 3px;
+    border-radius: 50%;
+    transition: .4s;
+}
+
+.sobre_text{
+    max-width: 1200px;
+    width: 70%;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.margin-items{
+    margin: 2rem 0px;
+}
+
+/* ========== HABILIDADES ========== */
+
+.habilidades {
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container_habilidades {
+    width: 1280px;
+    margin: 3.5rem 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hab-setor-1 img{
+    width: 20%;
+    animation: 6s animationCard infinite forwards;
+}
+
+.hab-setor-1 img{
+    width: 300px;
+    margin-left: -20px;
+}
+
+.links_hab li{
+    margin: .5em;
+}
+
+.hab-setor-1 ul{
+    display: flex;
+}
+
+.hab-setor-2 {
+    display: flex;
+    align-items: center;
+}
+
+.bg_setor{
+    background: var(--text-color-title);
+    border: 5px solid black;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bg_setor3{
+    background: var(--text-color-title);
+    border: 5px solid black;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.bg_setor2, .bg_setor4{
+    padding: 1rem 1rem;
+    background: var(--text-color-title);
+    border: 5px solid black;
+    background-repeat: no-repeat;
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 2rem;
+}
+
+.bg_setor{
+    animation: 3s animationCard infinite forwards;
+}
+.bg_setor2{
+    animation: 2s animationCard infinite forwards;
+}
+.bg_setor3{
+    animation: 2s animationCard infinite forwards;
+}
+.bg_setor4{
+    animation: 3s animationCard infinite forwards;
+}
+
+/* ========== PROJETOS ========== */
+
+.projetos {
+    background: var(--background-color-2);
+    display: flex;
+    justify-content: center;
+}
+
+.setor_projetos{
+    width: 1280px;
+    height: 500px;
+}
+
+.text_projetos{
+    text-align: center;
+}
+
+.link_projetos{
+    display: flex;
+    justify-content: space-around;
+}
+
+.projetos_items{
+    width: auto;
+    margin: 1rem;
+    text-align: center;
+}
+
+.projetos_items a{
+    color: black;
+}
+
+.projetos_items a:hover{
+    color: #777;
+}
+
+.projetos_items img{
+    width: 350px;
+    height: 250px;
+    border: 2px solid black;
+}
+
+.projetos_items img:hover{
+    border: 2px solid #1DA88C;
+    transform: scale(1.1);
+    transform: .4s;
+}
+
+/* ========== CONTATOS ========== */
+
+.contatos{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.contato_links{
+    display: flex;
+}
+
+.links_items{
+    margin: 30px;
+}
+
+.link1{
+    color: var(--text-color-title) ;
+}
+
+.link2{
+    color: var(--text-color-title-2) ;
+}
+
+.link3{
+    color: var(--text-color-title-3) ;
+}
+
+/* ========== RODAPE ========== */
+
+footer {
+    height: 100px;
+    background: #1DA88C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ========== ANIMAÇÃO ========== */
+
+@media(min-width: 1200px) {
+
+    @keyframes animationCard {
+        0% {
+            transform: translateY(-10px);
+
+        }
+
+        50% {
+            transform: translateY(0px);
+
+        }
+
+        100% {
+            transform: translateY(-10px);
+
+        }
+    }
+}
