@@ -13,30 +13,95 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: var(--font-2);
+    font-family: Montserrat;
 }
 
 span{
-    color: var(--text-color-title);
+    color: var(--title-color);
+}
+
+h1, h2{
+    color: var(--title-color);
+    font-size: 1.5em;
+}
+
+h4{
+    color: var(--text-color);
+}
+
+h3{
+    color: var(--text-color);
+}
+
+p{
+    font-size: 1em;
+    color: var(--text-color);
 }
 
 /* ========== VARIAVEIS ========== */
 
 :root {
     --background-color: #FFFFFF;
-    --background-color-2: #eefffb;
+    --section-color: rgba(185, 250, 188, 0.2);
+    --card-background-color: rgba(185, 250, 188, 0.2);
+    --card-linear-gradient: linear-gradient(180deg, rgba(217, 217, 217, 0.6) 0%, rgba(255, 169, 220, 0.6) 0.01%, rgba(250, 243, 182, 0.6) 50.83%, rgba(180, 110, 251, 0.6) 95.62%);
     --text-color: #000;
-    --text-color-2: #777;
-    --text-color-title: #1DA88C;
-    --text-color-title-2: #CFCA2D;
-    --text-color-title-3: #804BCC;
-    --font-1: Montserrat;
-    --font-2: Poppins;
-    --border: 2px solid #777;
-    --border-radius: 15px;
+    --title-color-second: #fff;
+    --title-color: #28FCF5;
+    --subtitle-color: #30E6AD;
+    --footer-text-color: #28FCF5;
+    --button-color: #27C3F2;
+    --floating-menu: #fff;
+    --border-floating: 1px solid #27C3F2;
+    --hover-floating: #28FCF5;
+    --footer-background: rgba(185, 250, 188, 0.2);
+    --text-footer: #FFC700;
+    --line-color: #27C3F2;
 }
 
+.lightTheme {
+    --background-color: #FFFFFF;
+    --section-color: rgba(185, 250, 188, 0.5);
+    --card-background-color: rgba(185, 250, 188, 0.5);
+    --card-linear-gradient: linear-gradient(180deg, rgba(217, 217, 217, 0.6) 0%, rgba(255, 169, 220, 0.6) 0.01%, rgba(250, 243, 182, 0.6) 50.83%, rgba(180, 110, 251, 0.6) 95.62%);
+    --text-color: #000;
+    --title-color-second: #fff;
+    --title-color: #28FCF5;
+    --subtitle-color: #30E6AD;
+    --footer-text-color: #28FCF5;
+    --button-color: #27C3F2;
+    --floating-menu: #fff;
+    --border-floating: 1px solid #27C3F2;
+    --hover-floating: #28FCF5;
+    --footer-background: rgba(185, 250, 188, 0.5);
+    --text-footer: #FFC700;
+    --line-color: #27C3F2;
+}
+
+#dark_mode {
+    --background-color: #07091B;
+    --card-background-color: rgba(25, 19, 43, 0.7);
+    --card-linear-gradient: linear-gradient(135.93deg, rgba(255, 48, 128, 0.5) 5.92%, rgba(65, 72, 251, 0.5) 90.08%);
+    --section-color: rgba(70, 71, 85, 0.2);
+    --text-color: #fff;
+    --title-color: #9B3EF8;
+    --footer-text-color: #fff;
+    --linear-color: linear-gradient(90deg, #9B3EF8 22.35%, #F925A2 82.75%);
+    --line-color: #A750DB;
+    --button-color: #7E24AB;
+    --floating-menu: #07091B;
+    --hover-floating: #7E24AB;
+    --border-floating: 1px solid #7E24AB;
+    --footer-background: rgba(75, 0, 150, 0.1);
+    --text-footer: #fff;
+}
+
+
 /* ========== HEADER ========== */
+
+body{
+    background: var(--background-color);
+}
 
 header {
     display: flex;
@@ -56,23 +121,83 @@ header {
 .wrapper{
     max-width: 84%;
     display: flex;
-    font-family: var(--font-1);
+    font-family: Montserrat;
 }
 
-.header_text{
+.header_text {
     justify-content: center;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
 .avatar{
     z-index: -1;
 }
 
+/* ========== TROCA DE THEMA ========== */
+
+.switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.switch .switch-text {
+    padding-right: 0.3rem ;
+    font-size: 1.2rem;
+}
+
+.switch .switch-wrapper{
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    position: relative;
+}
+
+.switch .switch-wrapper .switch-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 40px;
+    background-color: black;
+}
+
+.switch .switch-wrapper input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.switch .switch-wrapper .switch-button::before {
+    content: "";
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    transition: .4s all ease;
+    background: white;
+}
+
+.switch .switch-wrapper input:checked + .switch-button{
+    background: var(--button-color);
+}
+
+.switch .switch-wrapper input:checked + .switch-button::before{
+    transform: translateX(26px);
+}
+
 /* ========== MENU ========== */
 
 .nav-menu{
-    background: var(--background-color-2);
+    background: var(--section-color);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,9 +208,9 @@ header {
     height: 90px;
     margin-top: -40px;
     display: flex;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    background-color: white;
+    border: var(--border-floating);
+    border-radius: 16px;
+    background-color: var(--floating-menu);
     box-shadow: 0px 5px 20px rgb(0 0 0 / 18%);
     align-items: center;
 }
@@ -107,14 +232,14 @@ header {
 }
 
 .floating_items a:hover{
-    color: var(--text-color-title);
+    color: var(--title-color);
     transition: .4s;
 }
 
 /* ========== Sobre ========== */
 
 .sobre-mim {
-    background: var(--background-color-2);
+    background: var(--section-color);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -126,19 +251,19 @@ header {
 .sobre-mim h1{
     width: 1280px;
     padding: 3rem;
-    border-bottom: 1px solid #1DA88C;
-    color: var(--text-color-title);
+    border-bottom: 1px solid;
+    color: var(--line-color);
 }
 
 .img_perfil{
-    margin-top: 50px;
     display: flex;
-    background-image: url(../img/fundo-perfil.png);
-    background-repeat: no-repeat;
+    border: 5px solid;
+    border-color: var(--line-color);
+    border-radius: 50%;
 }
 
 .img_perfil img{
-    margin: 3px;
+    margin: -2px;
     border-radius: 50%;
     transition: .4s;
 }
@@ -173,6 +298,9 @@ header {
 .hab-setor-1 img{
     width: 20%;
     animation: 6s animationCard infinite forwards;
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: var(--line-color);
 }
 
 .hab-setor-1 img{
@@ -194,8 +322,9 @@ header {
 }
 
 .bg_setor{
-    background: var(--text-color-title);
-    border: 5px solid black;
+    background: var(--section-color);
+    border: 5px solid;
+    color: var(--line-color);
     background-repeat: no-repeat;
     display: flex;
     width: 15rem;
@@ -208,8 +337,9 @@ header {
 }
 
 .bg_setor3{
-    background: var(--text-color-title);
-    border: 5px solid black;
+    background: var(--section-color);
+    border: 5px solid;
+    color: var(--line-color);
     background-repeat: no-repeat;
     display: flex;
     width: 15rem;
@@ -223,8 +353,9 @@ header {
 
 .bg_setor2, .bg_setor4{
     padding: 1rem 1rem;
-    background: var(--text-color-title);
-    border: 5px solid black;
+    background: var(--section-color);
+    border: 5px solid;
+    color: var(--line-color);
     background-repeat: no-repeat;
     display: flex;
     width: 15rem;
@@ -279,7 +410,7 @@ header {
 }
 
 .projetos_items a{
-    color: black;
+    color: var(--text-color);
 }
 
 .projetos_items a:hover{
@@ -304,10 +435,18 @@ header {
     display: flex;
     text-align: center;
     justify-content: center;
+    background: var(--section-color);
 }
 
 .contato_links{
     display: flex;
+}
+
+.texto_contatos{
+    padding: 2rem;
+    background-color: var(--section-color);
+    border-radius: 5px;
+    border: 2px solid;
 }
 
 .links_items{
@@ -315,25 +454,39 @@ header {
 }
 
 .link1{
-    color: var(--text-color-title) ;
+    color: var(--title-color) ;
 }
 
 .link2{
-    color: var(--text-color-title-2) ;
+    color: var(--text-footer) ;
 }
 
 .link3{
-    color: var(--text-color-title-3) ;
+    color: var(--title-color) ;
+}
+
+.texto_contatos span{
+    color: #FFC700;
 }
 
 /* ========== RODAPE ========== */
 
+.emot{
+    border: 5px solid;
+    border: var(--section-color);
+}
+
 footer {
     height: 100px;
-    background: #1DA88C;
+    background: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.contato_emot .emot img{
+    border: 5px solid;
+    border-color: var(--line-color);
 }
 
 /* ========== ANIMAÇÃO ========== */
